@@ -1,0 +1,99 @@
+
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
+
+<!-- CSS link goes here -->
+<link rel="stylesheet" href="css/framework7.material.css">
+<link rel="stylesheet" href="css/framework7.material.colors.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/swipebox.min.css">
+<link rel="stylesheet" href="css/maxframes.css">
+
+
+<div data-page="login-screen" class="page ">
+
+  <div class="toolbar tabbar">
+    <div class="toolbar-inner"> <a href="#tab1" class="button active tab-link">Sign in</a> <a href="#tab2" class="button tab-link">Sign up</a> </div>
+  </div>
+  <div class="page-content logins hide-bars-on-scroll"> 
+    <div class="tabs-animated-wrap">
+      <div class="tabs" >
+        <div id="tab1" class="tab active">
+          <div id="loginForm">
+            <div class="list-block">
+              <ul>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input class="style login3" type="email" name="email" placeholder="E-mail">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input class="style login3" type="password" name="password" placeholder="Password">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="content-block col-100"> <a href="#" id="signin" class="button button-fill">Login</a> </div>
+            </div>
+          </div>
+          
+        </div>
+        <div id="tab2" class="tab">
+          <div id="signupForm">
+            <div class="list-block">
+              <ul>
+                  <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-input">
+                          <input class="style login3" type="text" id="fullname" name="fullname" placeholder="Full Name">
+                        </div>
+                      </div>
+                    </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input class="style login3" type="email" id="email" name="email" placeholder="E-mail">
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input class="style login3" type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input class="style login3" type="password" name="password" placeholder="Confirm Password">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="content-block button-connect "> <a href="#" id="signup" class="button ">Create Account</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JS link goes here --> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+
+<!-- Add additional services you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+
+<script type="text/javascript" src="js/login.js"></script>
+<script>
+  
+</script>
