@@ -1,42 +1,27 @@
-<div data-page="dashboard" class="page navbar-fixed">
+<div data-page="student-info" class="page navbar-fixed">
     <div class="navbar ">
       <div class="navbar-inner">
           <div class="left sliding"><a href="#" data-panel="left" class="open-panel link icon-only"><i class="fa fa-bars"></i></a></div>
           <div class="center ">Students Info</div>
-          <div class="right"><a href="landing.html" class=" link"><i class="fa fa-smile-o"></i></a></div>
+          <div class="right"><div id="user-name" class="item-title item-label"></div><a href="landing.html" class=" link"><i class="fa fa-smile-o"></i></a></div>
       </div>
     </div>
-    <div class="page-content hide-bars-on-scroll " >
+    <div class="page-content hide-bars-on-scroll" >
       <div class="prductlist   content-block"> 
-          <div class="row chartblock">
+          <div class="row chartblock" >
               
                  
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Name</th>
-                              <th>School</th>
-                              <th>Actions</th>
-                          </tr>
-                      </thead>
+                  <table id="students-table">
+                   
                       <tbody>
-                          <tr>
-                              <td>Moody Amakobe</td>
-                              <td>Fr Walstra Academy</td>
-                              <td></td>
-                          </tr>
-                          <tr>
-                              <td>Tyrone Amakobe</td>
-                              <td>Mangu High School</td>
-                              <td></td>
-                          </tr>
+                          
                           
                       </tbody>
                   </table>
                 
             
           </div>
-          <form>
+          <form id="student-form">
             <div class="list-block">
               <ul>
                 <li>
@@ -44,7 +29,7 @@
                     <div class="item-inner">
                       <div class="item-title  label">Full name</div>
                       <div class="item-input">
-                        <input type="text" placeholder=""/>
+                        <input type="text" id="studentname" placeholder=""/>
                       </div>
                     </div>
                   </div>
@@ -54,15 +39,12 @@
                     <div class="item-inner">
                       <div class="item-title  label">School</div>
                       <div class="item-input">
-                        <select>
-                          <option> </option>
-                          <option>Fr Walstra</option>
-                          <option>St Peters</option>
-                          <option>Booker Academy</option>
-                          <option>Mangu High School</option>
-                        </select>
-                      </div>
-                    </div>
+                        <select id="schools-select" onload="addOption()">
+                        <option>Select..</option>
+                        <option value="522123">Musingu High</option>
+                      </select>
+                  </div>
+                  </div>
                   </div>
               </li>
                    <li>
@@ -70,7 +52,7 @@
                     <div class="item-inner">
                       <div class="item-title  label">Admission Number</div>
                       <div class="item-input">
-                        <input type="text" placeholder=""/>
+                        <input type="text" id= "admissionnumber" placeholder=""/>
                       </div>
                     </div>
                   </div>
@@ -82,10 +64,11 @@
                 
               </ul>
             </div>
-            </form>
             <div class="content-block">
-                <a href="sign-in.html" class=" button  color2 col-100">Add</a>
-          </div>
+              <a href="#" id="submitstudent" class=" button  color2 col-100" onclick="SaveandReload();">Add</a>
+        </div>
+            </form>
+            
         </div>
         
          
@@ -97,4 +80,24 @@
       
     </div>
   </div>
-  
+      <!-- Firebase App is always required and must be first -->
+
+        <script type="text/javascript" src="js/jquery.min.js"></script> 
+       
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-storage.js"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script> 
+<script src="/__/firebase/init.js"></script>
+<script src="js/login.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Option 2. Using live 'page:init' event handlers for each page
+  $$(document).on('page:init', function (e) {
+  addOption();
+})
+</script>

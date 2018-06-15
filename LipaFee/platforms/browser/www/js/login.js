@@ -5,24 +5,22 @@
   var config = {
     apiKey: "AIzaSyDbBDVLGgkYp3x2rw7wEwYccolxDjWCnSw",
     authDomain: "feodum-8812a.firebaseapp.com",
-    databaseURL: "https://feodum-8812a.firebaseio.com",
+    databaseURL: "https://feodum-8812a.firebaseio.com/",
     projectId: "feodum-8812a",
     storageBucket: "feodum-8812a.appspot.com",
     messagingSenderId: "1084241232232"
   };
   firebase.initializeApp(config);
 
-    $(document).ready(function(){
-     
+  
+ 
+    
+    $( document ).ready(function() {
       $('#signup').click(function(){ handleSignUp(); return false; });
       $('#signin').click(function(){ toggleSignIn(); return false; });
       $('#signout').click(function(){ signout(); return false; });
-  
-      
+  });
      
-    });
-    
-    
     
      function handleSignUp() {
         var email = document.getElementById('email').value;
@@ -86,7 +84,11 @@
         }
         // Sign in with email and pass.
         // [START authwithemail]
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(user => {
+          // Sign in success
+          window.location.href = 'index.html'
+      }).catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
@@ -111,6 +113,7 @@
 
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
+      
     }).catch(function(error) {
       // An error happened.
     });
